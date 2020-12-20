@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import CoreData
 
 class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet var loading: UIActivityIndicatorView!
-    var navBar: UINavigationBar!
     
+    @IBOutlet var loading: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
+    var navBar: UINavigationBar!
     var heroes:  [Superhero] = [];
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext;
+
+    
+  
     
     override func viewDidLoad() {
         loading.hidesWhenStopped = true
@@ -27,7 +33,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
                 switch result {
                 case .success(let result):
                     guard let characters = result.data else {print("no characters"); return }
-                    self.heroes = characters.results
+                    self.heroes = characters.results ?? []
                     print(self.heroes);
                     self.loading.stopAnimating()
                     self.tableView.reloadData()
@@ -75,7 +81,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         let contextItem = UIContextualAction(style: .normal, title: "View") {
             (contextualAction, view, boolValue) in
             let currentCell = self.heroes[indexPath.row]
-            self.navigateThrough(id: currentCell.id!)
+            self.navigateThrough(id: Int(currentCell.id))
             
         }
         let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
@@ -83,3 +89,43 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 }
 
+//extension UIViewController {
+//    func save(value: String) {
+//        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+//            let context = appDelegate.persistentContainer.viewContext
+//            
+//            guard let entityDescription = NSEntityDescription.entity(forEntityName: "TestEntity", in: context) else {return}
+//            
+//            let newValue = NSManagedObject(entity: entityDescription, insertInto: context)
+//            newValue.setValue(value, forKey: "testValue")
+//            
+//            do {
+//                try context.save()
+//                print("saved \(value) successfully")
+//                
+//            } catch{
+//                print("error saving \(value)")
+//            }
+//        }
+//    }
+//    
+//    func retrieveValues(){
+//        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+//            let context = appDelegate.persistentContainer.viewContext
+//            let fetchRequest = NSFetchRequest<TestEntity>(entityName: "TestEntity");
+//            
+//            do {
+//                let results = try context.fetch(fetchRequest);
+//                
+//                for result in results {
+//                    if let testValue = result.testValue {
+//                        print("\(result.testValue) retrieved!")}
+//                    else {
+//                        print("Nothing found!")
+//                        
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}

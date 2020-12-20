@@ -17,7 +17,7 @@ class ComicCollectionViewCell: UICollectionViewCell {
     }
 
     func setup(comic: Comic) {
-        let ext = comic.thumbnail?.extension
+        let ext = comic.thumbnail?.imageExtension
         let path = comic.thumbnail?.path
         let urlPath = ( path ?? "" ) + "." + ( ext ?? "" )
         let url = URL(string: urlPath )!

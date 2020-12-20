@@ -1,0 +1,15 @@
+//
+//  CharacterList+CoreDataClass.swift
+//  MarvelApp
+//
+//  Created by Adam Bayes on 20/12/2020.
+//
+//
+
+import Foundation
+import CoreData
+
+@objc(CharacterList)
+public class CharacterList: NSManagedObject {
+
+}

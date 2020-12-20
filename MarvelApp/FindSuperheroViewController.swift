@@ -28,7 +28,7 @@ public class FindSuperHeroViewController: UIViewController {
             case .success(let result):
                 guard let hero = result.data else {print("no hero sorry"); return }
                 
-                self.superHeroNameLabel.text = hero.results[0].name
+                self.superHeroNameLabel.text = hero.results?[0].name
                 
             case .failure(let error) :
                 print("We have an error \(error)")

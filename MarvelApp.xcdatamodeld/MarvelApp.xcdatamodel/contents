@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CharacterDataContainer" representedClassName="CharacterDataContainer" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="limit" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="offset" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="results" optional="YES" attributeType="Transformable" customClassName="[Superhero]"/>
+        <attribute name="total" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CharacterDataWrapper" representedClassName="CharacterDataWrapper" syncable="YES">
+        <attribute name="attributionHTML" optional="YES" attributeType="String"/>
+        <attribute name="attributionText" optional="YES" attributeType="String"/>
+        <attribute name="code" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="copyright" optional="YES" attributeType="String"/>
+        <attribute name="data" optional="YES" attributeType="Transformable" customClassName="CharacterDataContainer"/>
+        <attribute name="etag" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CharacterList" representedClassName="CharacterList" syncable="YES">
+        <attribute name="available" optional="YES" attributeType="String"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="items" optional="YES" attributeType="Transformable"/>
+        <attribute name="returned" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CharacterSummary" representedClassName="CharacterSummary" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <attribute name="role" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Comic" representedClassName="Comic" syncable="YES">
+        <attribute name="collectedIssues" optional="YES" attributeType="Transformable" customClassName="[ComicSummary]"/>
+        <attribute name="creators" optional="YES" attributeType="Transformable" customClassName="CreatorList"/>
+        <attribute name="dates" optional="YES" attributeType="Transformable" customClassName="[ComicDate]"/>
+        <attribute name="descriptionLocal" optional="YES" attributeType="String"/>
+        <attribute name="digitalId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="events" optional="YES" attributeType="Transformable" customClassName="EventsList"/>
+        <attribute name="format" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="images" optional="YES" attributeType="Transformable" customClassName="[Images]"/>
+        <attribute name="isbn" optional="YES" attributeType="String"/>
+        <attribute name="issueNumber" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="modified" optional="YES" attributeType="String"/>
+        <attribute name="pageCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="prices" optional="YES" attributeType="Transformable" customClassName="[ComicPrice]"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <attribute name="series" optional="YES" attributeType="Transformable" customClassName="SeriesSummary"/>
+        <attribute name="stories" optional="YES" attributeType="Transformable" customClassName="StoryList"/>
+        <attribute name="textObjects" optional="YES" attributeType="Transformable" customClassName="[TextObject]"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Transformable" customClassName="Image"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="urls" optional="YES" attributeType="Transformable" customClassName="[Url]"/>
+        <attribute name="variantDescription" optional="YES" attributeType="String"/>
+        <attribute name="variants" optional="YES" attributeType="Transformable" customClassName="[ComicSummary]"/>
+    </entity>
+    <entity name="ComicDataContainer" representedClassName="ComicDataContainer" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="limit" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="offset" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="results" optional="YES" attributeType="Transformable" customClassName="[Comic]"/>
+        <attribute name="total" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="ComicDataWrapper" representedClassName="ComicDataWrapper" syncable="YES">
+        <attribute name="attributionHTML" optional="YES" attributeType="String"/>
+        <attribute name="attributionText" optional="YES" attributeType="String"/>
+        <attribute name="code" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="copyright" optional="YES" attributeType="String"/>
+        <attribute name="data" optional="YES" attributeType="Transformable" customClassName="ComicDataContainer"/>
+        <attribute name="etag" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ComicDate" representedClassName="ComicDate" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ComicList" representedClassName="ComicList" syncable="YES">
+        <attribute name="available" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="items" optional="YES" attributeType="Transformable" customClassName="[ComicSummary]"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="ComicPrice" representedClassName="ComicPrice" syncable="YES">
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ComicSummary" representedClassName="ComicSummary" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CreatorList" representedClassName="CreatorList" syncable="YES">
+        <attribute name="available" optional="YES" attributeType="String"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="items" optional="YES" attributeType="Transformable" customClassName="[CreatorSummary]"/>
+        <attribute name="returned" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CreatorSummary" representedClassName="CreatorSummary" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <attribute name="role" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="EventsList" representedClassName="EventsList" syncable="YES">
+        <attribute name="available" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="items" optional="YES" attributeType="Transformable" customClassName="[EventSummary]"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="EventSummary" representedClassName="EventSummary" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Images" representedClassName="Images" syncable="YES">
+        <attribute name="imageExtension" optional="YES" attributeType="String"/>
+        <attribute name="path" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SeriesList" representedClassName="SeriesList" syncable="YES">
+        <attribute name="available" optional="YES" attributeType="String"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="items" optional="YES" attributeType="Transformable" customClassName="[SeriesSummary]"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="SeriesSummary" representedClassName="SeriesSummary" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="StoryList" representedClassName="StoryList" syncable="YES">
+        <attribute name="available" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="items" optional="YES" attributeType="Transformable" customClassName="[StorySummary]"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="StorySummary" representedClassName="StorySummary" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Superhero" representedClassName="Superhero" syncable="YES">
+        <attribute name="comics" optional="YES" attributeType="Transformable" customClassName="ComicList"/>
+        <attribute name="descriptionLocal" optional="YES" attributeType="String"/>
+        <attribute name="eventList" optional="YES" attributeType="Transformable" customClassName="SeriesList"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modified" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <attribute name="stories" optional="YES" attributeType="Transformable" customClassName="StoryList"/>
+        <attribute name="urls" optional="YES" attributeType="Transformable" customClassName="[Url]"/>
+    </entity>
+    <entity name="TextObject" representedClassName="TextObject" syncable="YES">
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Url" representedClassName="Url" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CharacterDataWrapper" positionX="-27" positionY="18" width="128" height="148"/>
+        <element name="CharacterDataContainer" positionX="18" positionY="108" width="128" height="118"/>
+        <element name="Superhero" positionX="54" positionY="153" width="128" height="178"/>
+        <element name="Url" positionX="18" positionY="153" width="128" height="73"/>
+        <element name="ComicList" positionX="27" positionY="162" width="128" height="103"/>
+        <element name="StoryList" positionX="36" positionY="171" width="128" height="103"/>
+        <element name="SeriesList" positionX="45" positionY="180" width="128" height="103"/>
+        <element name="ComicSummary" positionX="54" positionY="189" width="128" height="73"/>
+        <element name="StorySummary" positionX="63" positionY="198" width="128" height="88"/>
+        <element name="EventsList" positionX="72" positionY="207" width="128" height="103"/>
+        <element name="EventSummary" positionX="27" positionY="153" width="128" height="73"/>
+        <element name="SeriesSummary" positionX="36" positionY="162" width="128" height="73"/>
+        <element name="ComicDataWrapper" positionX="45" positionY="180" width="128" height="148"/>
+        <element name="ComicDataContainer" positionX="54" positionY="189" width="128" height="118"/>
+        <element name="Comic" positionX="63" positionY="198" width="128" height="388"/>
+        <element name="TextObject" positionX="72" positionY="216" width="128" height="88"/>
+        <element name="ComicDate" positionX="81" positionY="225" width="128" height="73"/>
+        <element name="ComicPrice" positionX="27" positionY="171" width="128" height="73"/>
+        <element name="Images" positionX="36" positionY="180" width="128" height="73"/>
+        <element name="CreatorList" positionX="45" positionY="189" width="128" height="103"/>
+        <element name="CharacterList" positionX="54" positionY="198" width="128" height="103"/>
+        <element name="CharacterSummary" positionX="63" positionY="207" width="128" height="88"/>
+        <element name="CreatorSummary" positionX="72" positionY="216" width="128" height="88"/>
+    </elements>
+</model>
